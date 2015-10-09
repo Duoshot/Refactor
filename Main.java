@@ -70,6 +70,14 @@ public class Main {
 		System.out.println();
 	}
 	
+	public static void printInstructions()
+	{
+		System.out.println("To draw a rectangle, enter RE<appearance><width><height>, e.g. RE#45");
+		System.out.println("To draw a right triangle, enter RT<appearance><height>, e.g. RT^3");
+		System.out.println("To draw a left triangle, enter LT<appearance><height>, e.g. LT@6");
+		System.out.println("To display how many shapes have been drawn, enter PR");
+	}
+	
 	public static void main(String [] args) throws Exception
 	{
 		int numRectangle = 0;
@@ -81,9 +89,8 @@ public class Main {
 		
 		while(true)
 		{
-	
-			System.out.println("Enter shape (RE,LT,RT), shape appearance, and shape dimensions (width,height). E.g. RE*33, or enter anything to quit");
-
+			printInstructions();
+			
 			Scanner scanner = new Scanner(System.in);
 			String line = scanner.nextLine();		
 	
