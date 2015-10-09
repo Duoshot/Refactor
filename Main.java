@@ -2,6 +2,21 @@ import java.util.Scanner;
 
 public class Main {
 
+	public static void func1(char appearance, int width, int height)
+	{
+		System.out.println("Rectangle");
+		for(int i = 0; i < height; i++)
+		{ 
+			for(int j = 0; j < width; j++)
+			{
+				System.out.print(appearance);
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+	
+	
 	public static void main(String [] args) throws Exception
 	{
 	System.out.println("Last Name: Law");
@@ -43,17 +58,8 @@ public class Main {
 				appearance = line.charAt(2); // get the symbol used to draw the shape
 				height = Integer.parseInt(line.substring(3,4)); // get height
 				width = Integer.parseInt(line.substring(4)); // get width
-			
-				System.out.println("Rectangle");
-				for(int i = 0; i < height; i++)
-				{ 
-					for(int j = 0; j < width; j++)
-					{
-						System.out.print(appearance);
-					}
-					System.out.println();
-				}
-				System.out.println();
+				func1(appearance, height, width);
+				
 				break;
 		
 			case"RT":
@@ -92,7 +98,7 @@ public class Main {
 			
 			default:
 				System.out.println("Something bad happened!");
-				exit(0);
+				System.exit(0);
 			}
 		
 		}
