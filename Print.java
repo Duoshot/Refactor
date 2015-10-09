@@ -1,9 +1,9 @@
 
 public class Print {
 
-	public static int numRec;
-	public static int numRightTri;
-	public static int numLeftTri;
+	private int numRec;
+	private int numRightTri;
+	private int numLeftTri;
 	
 	public Print()
 	{
@@ -12,7 +12,37 @@ public class Print {
 		numLeftTri = 0;
 	}
 	
-	public static void printBanner()
+	public void addNumRec()
+	{
+		numRec++;
+	}
+	
+	public int getNumRec()
+	{
+		return numRec;
+	}
+	
+	public void addNumRightTri()
+	{
+		numRightTri++;
+	}
+	
+	public int getNumRightTri()
+	{
+		return numRightTri;
+	}
+	
+	public void addNumLeftTri()
+	{
+		numLeftTri++;
+	}
+	
+	public int getNumLeftTri()
+	{
+		return numLeftTri;
+	}
+	
+	public void printBanner()
 	{
 		System.out.println("Last Name: Law");
 		System.out.println("First Name: Gorman");
@@ -25,19 +55,19 @@ public class Print {
 		System.out.println();
 	}
 	
-	public static void getCounter()
+	public void getCounter()
 	{
 		System.out.println("Totals for number of shapes drawn:");
 		System.out.print("	Rectangles: ");
-		System.out.println(numRec);
+		System.out.println(getNumRec());
 		System.out.print("	Right Triangles: ");
-		System.out.println(numRightTri);
+		System.out.println(getNumRightTri());
 		System.out.print("	Left Triangles: ");
-		System.out.println(numLeftTri);
+		System.out.println(getNumLeftTri());
 		System.out.println();
 	}
 	
-	public static void printInstructions()
+	public void printInstructions()
 	{
 		System.out.println("To draw a rectangle, enter RE<appearance><height><width>, e.g. RE#45");
 		System.out.println("To draw a right triangle, enter RT<appearance><height>, e.g. RT^3");

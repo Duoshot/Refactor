@@ -7,12 +7,12 @@ public class Main {
 	{	
 		Print print = new Print();
 		
-		Print.printBanner();
+		print.printBanner();
 		
 		
 		while(true)
 		{
-			Print.printInstructions();
+			print.printInstructions();
 			
 			Draw draw = new Draw();
 			
@@ -32,30 +32,30 @@ public class Main {
 		
 			if(shape.equals("RE"))
 			{
-				draw.appearance = line.charAt(2); // get the symbol used to draw the shape
-				draw.height = Integer.parseInt(line.substring(3,4)); // get height
-				draw.width = Integer.parseInt(line.substring(4)); // get width
+				draw.setAppearance(line.charAt(2)); // get the symbol used to draw the shape
+				draw.setHeight(Integer.parseInt(line.substring(3,4))); // get height
+				draw.setWidth(Integer.parseInt(line.substring(4))); // get width
 				draw.drawRectangle();
-				Print.numRec++;
+				print.addNumRec();;
 			}
 			else if(shape.equals("RT"))
 			{
-				draw.appearance = line.charAt(2);  // get the symbol used to draw the shape
-				draw.height = Integer.parseInt(line.substring(3)); //Get the size
+				draw.setAppearance(line.charAt(2));  // get the symbol used to draw the shape
+				draw.setHeight(Integer.parseInt(line.substring(3))); //Get the size
 				draw.drawRightTriangle();
-				Print.numRightTri++;
+				print.addNumRightTri();
 			}
 		
 			else if(shape.equals("LT"))
 			{
-				draw.appearance = line.charAt(2);  // get the symbol used to draw the shape
-				draw.height = Integer.parseInt(line.substring(3)); //Get the size
+				draw.setAppearance(line.charAt(2));  // get the symbol used to draw the shape
+				draw.setHeight(Integer.parseInt(line.substring(3))); //Get the size
 				draw.drawLeftTriangle();
-				Print.numLeftTri++;
+				print.addNumLeftTri();
 			}
 			else if(shape.equals("PR"))
 			{
-				Print.getCounter();
+				print.getCounter();
 			}
 			else
 			{

@@ -1,9 +1,9 @@
 
 public class Draw {
 
-	public static char appearance;
-	public static int height;
-	public static int width;
+	private char appearance;
+	private int height;
+	private int width;
 	
 	public Draw()
 	{
@@ -12,43 +12,74 @@ public class Draw {
 		width = 0;
 	}
 	
+	public void setAppearance(char a)
+	{
+		appearance = a;
+	}
+	
+	public char getAppearance()
+	{
+		return appearance;
+	}
+	
+	public void setHeight(int h)
+	{
+		height = h;
+	}
+	
+	public int getHeight()
+	{
+		return height;
+	}
+	
+	public void setWidth(int w)
+	{
+		width = w;
+	}
+	
+	public int getWidth()
+	{
+		return width;
+	}
+	
+	
 	public void drawRectangle()
 	{
 		System.out.println("Rectangle");
-		for(int i = 0; i < height; i++)
+		for(int i = 0; i < getHeight(); i++)
 		{ 
-			for(int j = 0; j < width; j++)
+			for(int j = 0; j < getWidth(); j++)
 			{
-				System.out.print(appearance);
+				System.out.print(getAppearance());
 			}
 			System.out.println();
 		}
 		System.out.println();
 	}
 	
-	public static void drawRightTriangle()
+	public void drawRightTriangle()
 	{
 		System.out.println("Right triangle");
-		for(int i = 1; i <= height; i++)
+		for(int i = 1; i <= getHeight(); i++)
 		{
-			for(int j = height; j > 0; j--)
+			for(int j = getHeight(); j > 0; j--)
 			{
 				if(i < j)
 					System.out.print(" ");
 				else
-					System.out.print(appearance);
+					System.out.print(getAppearance());
 			}
 			System.out.println();
 		}
 	}
 	
-	public static void drawLeftTriangle()
+	public void drawLeftTriangle()
 	{
-		for(int i = 0; i < height; i++)
+		for(int i = 0; i < getHeight(); i++)
 		{
-			for(int j = height; j > i; j--)
+			for(int j = getHeight(); j > i; j--)
 			{
-				System.out.print(appearance);
+				System.out.print(getAppearance());
 			}
 			System.out.println();
 		}
