@@ -16,6 +16,22 @@ public class Main {
 		System.out.println();
 	}
 	
+	public static void func2(char appearance, int height)
+	{
+		System.out.println("Right triangle");
+		for(int i = 1; i <= height; i++)
+		{
+			for(int j = height; j > 0; j--)
+			{
+				if(i < j)
+					System.out.print(" ");
+				else
+					System.out.print(appearance);
+			}
+			System.out.println();
+		}
+	}
+	
 	
 	public static void main(String [] args) throws Exception
 	{
@@ -65,19 +81,8 @@ public class Main {
 			case"RT":
 				appearance = line.charAt(2);  // get the symbol used to draw the shape
 				height = Integer.parseInt(line.substring(3)); //Get the size
-			
-				System.out.println("Right triangle");
-				for(int i = 1; i <= height; i++)
-				{
-					for(int j = height; j > 0; j--)
-					{
-						if(i < j)
-							System.out.print(" ");
-						else
-							System.out.print(appearance);
-					}
-					System.out.println();
-				}
+				func2(appearance, height);
+				
 				break;
 		
 			case"LT":
