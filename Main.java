@@ -47,64 +47,61 @@ public class Main {
 	
 	public static void main(String [] args) throws Exception
 	{
-	System.out.println("Last Name: Law");
-	System.out.println("First Name: Gorman");
-	System.out.println("Student ID: 10053913");
-	System.out.println("Course: CPSC 233");
-	System.out.println("Tutorial Section: 2");
-	System.out.println("Assignment: 2");
-	System.out.println();
+		System.out.println("Last Name: Law");
+		System.out.println("First Name: Gorman");
+		System.out.println("Student ID: 10053913");
+		System.out.println("Course: CPSC 233");
+		System.out.println("Tutorial Section: 2");
+		System.out.println("Assignment: 2");
+		System.out.println();
 	
-	System.out.println("CPSC 501 Refactor");
-	System.out.println();
+		System.out.println("CPSC 501 Refactor");
+		System.out.println();
 
-	while(true)
-	{
+		while(true)
+		{
 	
-		System.out.println("Enter shape (RE,LT,RT), shape appearance, and shape dimensions (width,height). E.g. RE*33, or enter anything to quit");
+			System.out.println("Enter shape (RE,LT,RT), shape appearance, and shape dimensions (width,height). E.g. RE*33, or enter anything to quit");
 
-		Scanner scanner = new Scanner(System.in);
-		String line = scanner.nextLine();		
+			Scanner scanner = new Scanner(System.in);
+			String line = scanner.nextLine();		
 	
 		
-		if (line == "")
-		{
-            System.out.println("Empty line");
-            System.exit(0);         // terminate if file is empty
-        }
+			if (line == "")
+			{
+				System.out.println("Empty line");
+				System.exit(0);         // terminate if file is empty
+			}
 
-		String shape = ""; // initialize everything to the base case
-		char appearance = '\0';
-		int height = 0;
-		int width = 0;
+			String shape = ""; // initialize everything to the base case
+			char appearance = '\0';
+			int height = 0;
+			int width = 0;
 			
-		shape = line.substring(0,2); //parse the string from the file into the first 2 characters
+			shape = line.substring(0,2); //parse the string from the file into the first 2 characters
 		
-		switch(shape)
-		{
-			case"RE":
+			if(shape.equals("RE"))
+			{
 				appearance = line.charAt(2); // get the symbol used to draw the shape
 				height = Integer.parseInt(line.substring(3,4)); // get height
 				width = Integer.parseInt(line.substring(4)); // get width
 				func1(appearance, height, width);
-				
-				break;
-		
-			case"RT":
+			}
+			else if(shape.equals("RT"))
+			{
 				appearance = line.charAt(2);  // get the symbol used to draw the shape
 				height = Integer.parseInt(line.substring(3)); //Get the size
 				func2(appearance, height);
-				
-				break;
+			}
 		
-			case"LT":
+			else if(shape.equals("LT"))
+			{
 				appearance = line.charAt(2);  // get the symbol used to draw the shape
 				height = Integer.parseInt(line.substring(3)); //Get the size
 				func3(appearance, height);
-				
-				break;
-			
-			default:
+			}
+			else
+			{
 				System.out.println("Something bad happened!");
 				System.exit(0);
 			}
