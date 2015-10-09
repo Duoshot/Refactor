@@ -1,17 +1,10 @@
 
 public class Draw {
 
-	private char appearance;
-	private int height;
-	private int width;
-	
-	public Draw()
-	{
-		appearance = '\0';
-		height = 0;
-		width = 0;
-	}
-	
+	protected char appearance;
+	protected int height;
+	protected int width;
+
 	public void setAppearance(char a)
 	{
 		appearance = a;
@@ -42,47 +35,4 @@ public class Draw {
 		return width;
 	}
 	
-	
-	public void drawRectangle()
-	{
-		System.out.println("Rectangle");
-		for(int i = 0; i < getHeight(); i++)
-		{ 
-			for(int j = 0; j < getWidth(); j++)
-			{
-				System.out.print(getAppearance());
-			}
-			System.out.println();
-		}
-		System.out.println();
-	}
-	
-	public void drawRightTriangle()
-	{
-		System.out.println("Right triangle");
-		for(int i = 1; i <= getHeight(); i++)
-		{
-			for(int j = getHeight(); j > 0; j--)
-			{
-				if(i < j)
-					System.out.print(" ");
-				else
-					System.out.print(getAppearance());
-			}
-			System.out.println();
-		}
-	}
-	
-	public void drawLeftTriangle()
-	{
-		for(int i = 0; i < getHeight(); i++)
-		{
-			for(int j = getHeight(); j > i; j--)
-			{
-				System.out.print(getAppearance());
-			}
-			System.out.println();
-		}
-		System.out.println("Left triangle");
-	}
 }

@@ -6,20 +6,19 @@ public class Main {
 	public static void main(String [] args) throws Exception
 	{	
 		Print print = new Print();
+		Rectangle rec = new Rectangle();
+		RightTriangle rTri = new RightTriangle();
+		LeftTriangle lTri = new LeftTriangle();
 		
 		print.printBanner();
-		
 		
 		while(true)
 		{
 			print.printInstructions();
 			
-			Draw draw = new Draw();
-			
 			Scanner scanner = new Scanner(System.in);
 			String line = scanner.nextLine();		
 	
-		
 			if (line == "")
 			{
 				System.out.println("Empty line");
@@ -32,25 +31,25 @@ public class Main {
 		
 			if(shape.equals("RE"))
 			{
-				draw.setAppearance(line.charAt(2)); // get the symbol used to draw the shape
-				draw.setHeight(Integer.parseInt(line.substring(3,4))); // get height
-				draw.setWidth(Integer.parseInt(line.substring(4))); // get width
-				draw.drawRectangle();
+				rec.setAppearance(line.charAt(2)); // get the symbol used to draw the shape
+				rec.setHeight(Integer.parseInt(line.substring(3,4))); // get height
+				rec.setWidth(Integer.parseInt(line.substring(4,5))); // get width
+				rec.drawRectangle();
 				print.addNumRec();;
 			}
 			else if(shape.equals("RT"))
 			{
-				draw.setAppearance(line.charAt(2));  // get the symbol used to draw the shape
-				draw.setHeight(Integer.parseInt(line.substring(3))); //Get the size
-				draw.drawRightTriangle();
+				rTri.setAppearance(line.charAt(2));  // get the symbol used to draw the shape
+				rTri.setHeight(Integer.parseInt(line.substring(3,4))); //Get the size
+				rTri.drawRightTriangle();
 				print.addNumRightTri();
 			}
 		
 			else if(shape.equals("LT"))
 			{
-				draw.setAppearance(line.charAt(2));  // get the symbol used to draw the shape
-				draw.setHeight(Integer.parseInt(line.substring(3))); //Get the size
-				draw.drawLeftTriangle();
+				lTri.setAppearance(line.charAt(2));  // get the symbol used to draw the shape
+				lTri.setHeight(Integer.parseInt(line.substring(3,4))); //Get the size
+				lTri.drawLeftTriangle();
 				print.addNumLeftTri();
 			}
 			else if(shape.equals("PR"))
