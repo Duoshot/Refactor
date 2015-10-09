@@ -58,8 +58,24 @@ public class Main {
 		System.out.println();
 	}
 	
+	public static void getCounter (int rectangle, int rTriangle, int lTriangle)
+	{
+		System.out.println("Totals for number of shapes drawn:");
+		System.out.print("	Rectangles: ");
+		System.out.println(rectangle);
+		System.out.print("	Right Triangles: ");
+		System.out.print(rTriangle);
+		System.out.print("	Left Triangles: ");
+		System.out.println(lTriangle);
+		System.out.println();
+	}
+	
 	public static void main(String [] args) throws Exception
 	{
+		int numRectangle = 0;
+		int numRightTriangle = 0;
+		int numLeftTriangle = 0;
+		
 		printBanner();
 		
 		
@@ -91,12 +107,14 @@ public class Main {
 				height = Integer.parseInt(line.substring(3,4)); // get height
 				width = Integer.parseInt(line.substring(4)); // get width
 				drawRectangle(appearance, height, width);
+				numRectangle++;
 			}
 			else if(shape.equals("RT"))
 			{
 				appearance = line.charAt(2);  // get the symbol used to draw the shape
 				height = Integer.parseInt(line.substring(3)); //Get the size
 				drawRightTriangle(appearance, height);
+				numRightTriangle++;
 			}
 		
 			else if(shape.equals("LT"))
@@ -104,6 +122,11 @@ public class Main {
 				appearance = line.charAt(2);  // get the symbol used to draw the shape
 				height = Integer.parseInt(line.substring(3)); //Get the size
 				drawLeftTriangle(appearance, height);
+				numLeftTriangle++;
+			}
+			else if(shape.equals("PR"))
+			{
+				getCounter(numRectangle, numRightTriangle, numLeftTriangle);
 			}
 			else
 			{
