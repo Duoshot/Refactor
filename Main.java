@@ -45,7 +45,7 @@ public class Main {
 		System.out.println("Left triangle");
 	}
 	
-	public static void main(String [] args) throws Exception
+	public static void func4()
 	{
 		System.out.println("Last Name: Law");
 		System.out.println("First Name: Gorman");
@@ -54,10 +54,15 @@ public class Main {
 		System.out.println("Tutorial Section: 2");
 		System.out.println("Assignment: 2");
 		System.out.println();
-	
 		System.out.println("CPSC 501 Refactor");
 		System.out.println();
-
+	}
+	
+	public static void main(String [] args) throws Exception
+	{
+		func4();
+		
+		
 		while(true)
 		{
 	
