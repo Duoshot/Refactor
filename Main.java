@@ -18,7 +18,8 @@ public class Main {
 	while(true)
 	{
 	
-		System.out.print("Enter shape (RE,LT,RT), shape appearance, and shape dimensions (width,height). E.g. RE*33: ");
+		System.out.println("Enter shape (RE,LT,RT), shape appearance, and shape dimensions (width,height). E.g. RE*33, or enter anything to quit");
+
 		Scanner scanner = new Scanner(System.in);
 		String line = scanner.nextLine();		
 	
@@ -30,26 +31,25 @@ public class Main {
         }
 
 		String shape = ""; // initialize everything to the base case
-		char a = '\0';
-		int h = 0;
-		int w = 0;
-		int s = 0;
+		char appearance = '\0';
+		int height = 0;
+		int width = 0;
 			
 		shape = line.substring(0,2); //parse the string from the file into the first 2 characters
 		
 		switch(shape)
 		{
 			case"RE":
-				a = line.charAt(2); // get the symbol used to draw the shape
-				h = Integer.parseInt(line.substring(3,4)); // get height
-				w = Integer.parseInt(line.substring(4)); // get width
+				appearance = line.charAt(2); // get the symbol used to draw the shape
+				height = Integer.parseInt(line.substring(3,4)); // get height
+				width = Integer.parseInt(line.substring(4)); // get width
 			
 				System.out.println("Rectangle");
-				for(int i = 0; i < h; i++)
+				for(int i = 0; i < height; i++)
 				{ 
-					for(int j = 0; j < w; j++)
+					for(int j = 0; j < width; j++)
 					{
-						System.out.print(a);
+						System.out.print(appearance);
 					}
 					System.out.println();
 				}
@@ -57,32 +57,32 @@ public class Main {
 				break;
 		
 			case"RT":
-				a = line.charAt(2);  // get the symbol used to draw the shape
-				h = Integer.parseInt(line.substring(3)); //Get the size
+				appearance = line.charAt(2);  // get the symbol used to draw the shape
+				height = Integer.parseInt(line.substring(3)); //Get the size
 			
 				System.out.println("Right triangle");
-				for(int i = 1; i <= h; i++)
+				for(int i = 1; i <= height; i++)
 				{
-					for(int j = h; j > 0; j--)
+					for(int j = height; j > 0; j--)
 					{
 						if(i < j)
 							System.out.print(" ");
 						else
-							System.out.print(a);
+							System.out.print(appearance);
 					}
 					System.out.println();
 				}
 				break;
 		
 			case"LT":
-				a = line.charAt(2);  // get the symbol used to draw the shape
-				h = Integer.parseInt(line.substring(3)); //Get the size
+				appearance = line.charAt(2);  // get the symbol used to draw the shape
+				height = Integer.parseInt(line.substring(3)); //Get the size
 			
-				for(int i = 0; i < h; i++)
+				for(int i = 0; i < height; i++)
 				{
-					for(int j = h; j > i; j--)
+					for(int j = height; j > i; j--)
 					{
-						System.out.print(a);
+						System.out.print(appearance);
 					}
 					System.out.println();
 				}
@@ -92,6 +92,7 @@ public class Main {
 			
 			default:
 				System.out.println("Something bad happened!");
+				exit(0);
 			}
 		
 		}
