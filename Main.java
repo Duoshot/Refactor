@@ -2,51 +2,17 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static void printBanner()
-	{
-		System.out.println("Last Name: Law");
-		System.out.println("First Name: Gorman");
-		System.out.println("Student ID: 10053913");
-		System.out.println("Course: CPSC 233");
-		System.out.println("Tutorial Section: 2");
-		System.out.println("Assignment: 2");
-		System.out.println();
-		System.out.println("CPSC 501 Refactor");
-		System.out.println();
-	}
-	
-	public static void getCounter (int rectangle, int rTriangle, int lTriangle)
-	{
-		System.out.println("Totals for number of shapes drawn:");
-		System.out.print("	Rectangles: ");
-		System.out.println(rectangle);
-		System.out.print("	Right Triangles: ");
-		System.out.println(rTriangle);
-		System.out.print("	Left Triangles: ");
-		System.out.println(lTriangle);
-		System.out.println();
-	}
-	
-	public static void printInstructions()
-	{
-		System.out.println("To draw a rectangle, enter RE<appearance><height><width>, e.g. RE#45");
-		System.out.println("To draw a right triangle, enter RT<appearance><height>, e.g. RT^3");
-		System.out.println("To draw a left triangle, enter LT<appearance><height>, e.g. LT@6");
-		System.out.println("To display how many shapes have been drawn, enter PR");
-	}
 	
 	public static void main(String [] args) throws Exception
-	{
-		int numRectangle = 0;
-		int numRightTriangle = 0;
-		int numLeftTriangle = 0;
+	{	
+		Print print = new Print();
 		
-		printBanner();
+		Print.printBanner();
 		
 		
 		while(true)
 		{
-			printInstructions();
+			Print.printInstructions();
 			
 			Draw draw = new Draw();
 			
@@ -70,14 +36,14 @@ public class Main {
 				draw.height = Integer.parseInt(line.substring(3,4)); // get height
 				draw.width = Integer.parseInt(line.substring(4)); // get width
 				draw.drawRectangle();
-				numRectangle++;
+				Print.numRec++;
 			}
 			else if(shape.equals("RT"))
 			{
 				draw.appearance = line.charAt(2);  // get the symbol used to draw the shape
 				draw.height = Integer.parseInt(line.substring(3)); //Get the size
 				draw.drawRightTriangle();
-				numRightTriangle++;
+				Print.numRightTri++;
 			}
 		
 			else if(shape.equals("LT"))
@@ -85,11 +51,11 @@ public class Main {
 				draw.appearance = line.charAt(2);  // get the symbol used to draw the shape
 				draw.height = Integer.parseInt(line.substring(3)); //Get the size
 				draw.drawLeftTriangle();
-				numLeftTriangle++;
+				Print.numLeftTri++;
 			}
 			else if(shape.equals("PR"))
 			{
-				getCounter(numRectangle, numRightTriangle, numLeftTriangle);
+				Print.getCounter();
 			}
 			else
 			{
