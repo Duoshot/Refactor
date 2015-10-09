@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static void func1(char appearance, int width, int height)
+	public static void drawRectangle(char appearance, int width, int height)
 	{
 		System.out.println("Rectangle");
 		for(int i = 0; i < height; i++)
@@ -16,7 +16,7 @@ public class Main {
 		System.out.println();
 	}
 	
-	public static void func2(char appearance, int height)
+	public static void drawRightTriangle(char appearance, int height)
 	{
 		System.out.println("Right triangle");
 		for(int i = 1; i <= height; i++)
@@ -32,7 +32,7 @@ public class Main {
 		}
 	}
 	
-	public static void func3(char appearance, int height)
+	public static void drawLeftTriangle(char appearance, int height)
 	{
 		for(int i = 0; i < height; i++)
 		{
@@ -45,7 +45,7 @@ public class Main {
 		System.out.println("Left triangle");
 	}
 	
-	public static void func4()
+	public static void printBanner()
 	{
 		System.out.println("Last Name: Law");
 		System.out.println("First Name: Gorman");
@@ -60,7 +60,7 @@ public class Main {
 	
 	public static void main(String [] args) throws Exception
 	{
-		func4();
+		printBanner();
 		
 		
 		while(true)
@@ -90,20 +90,20 @@ public class Main {
 				appearance = line.charAt(2); // get the symbol used to draw the shape
 				height = Integer.parseInt(line.substring(3,4)); // get height
 				width = Integer.parseInt(line.substring(4)); // get width
-				func1(appearance, height, width);
+				drawRectangle(appearance, height, width);
 			}
 			else if(shape.equals("RT"))
 			{
 				appearance = line.charAt(2);  // get the symbol used to draw the shape
 				height = Integer.parseInt(line.substring(3)); //Get the size
-				func2(appearance, height);
+				drawRightTriangle(appearance, height);
 			}
 		
 			else if(shape.equals("LT"))
 			{
 				appearance = line.charAt(2);  // get the symbol used to draw the shape
 				height = Integer.parseInt(line.substring(3)); //Get the size
-				func3(appearance, height);
+				drawLeftTriangle(appearance, height);
 			}
 			else
 			{
